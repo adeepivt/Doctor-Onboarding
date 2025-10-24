@@ -52,9 +52,9 @@ class Database:
         conn = self.connect()
         cursor = conn.cursor()
         try:
+            print(query, params, 'mutation --- params\n\n')
             cursor.execute(query, params)
             conn.commit()
-            # Try to fetch result if it's a RETURNING query
             try:
                 result = cursor.fetchone()
                 return dict(result) if result else None
