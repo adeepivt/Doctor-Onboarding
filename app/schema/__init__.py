@@ -1,5 +1,5 @@
 import strawberry
-from app.schema.queries import Query
-from app.schema.mutations import Mutation
+from .queries import Query
+from .mutations import Mutation
 
 schema = strawberry.Schema(query=Query, mutation=Mutation)
